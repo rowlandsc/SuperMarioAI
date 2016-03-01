@@ -34,5 +34,8 @@ public class Play {
         task.setOptions(options);
 
         System.out.println ("Score: " + task.evaluate (controller)[0]);
+
+
+
     }
 }
