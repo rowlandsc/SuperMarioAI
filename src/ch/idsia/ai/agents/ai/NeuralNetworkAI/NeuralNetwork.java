@@ -5,10 +5,13 @@ import jdk.internal.util.xml.impl.Input;
 import sun.plugin.javascript.navig.Array;
 import sun.plugin.javascript.navig4.Layer;
 
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Time;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Created by Alex on 3/1/2016.
@@ -19,7 +22,7 @@ public class NeuralNetwork {
 
     ArrayList< ArrayList<Integer> > Weights = new ArrayList<ArrayList<Integer>>();
 
-    float Threshold = 0.5f;
+    float Threshold = 0.46f;
 
     NeuralNetwork(Integer inputs, ArrayList<Integer> hiddenLayerNumbers, Integer outputs) {
         Calendar seed = Calendar.getInstance();
@@ -31,7 +34,10 @@ public class NeuralNetwork {
         for (int i=1; i<LayerNumbers.size(); i++) {
             Weights.add(new ArrayList<Integer>());
             for (int j=0; j < LayerNumbers.get(i - 1) * LayerNumbers.get(i); j++) {
-                Weights.get(i - 1).add(random.nextInt(100));
+                if (random.nextInt(100) > 0)
+                    Weights.get(i - 1).add(random.nextInt(200) - 100);
+                else
+                    Weights.get(i - 1).add(0);
             }
         }
     }
@@ -59,7 +65,7 @@ public class NeuralNetwork {
                     totalWeight += Weights.get(i).get((j+1)*k);
                     value += new Float(Weights.get(i).get((j+1)*k)) * values.get(i).get(k);
                 }
-                values.get(i + 1).add(value / (1.0f * totalWeight));
+                values.get(i + 1).add(GetNeuronValue(value));
             }
         }
 
@@ -76,5 +82,28 @@ public class NeuralNetwork {
         }
         System.out.println();
         return buttons;
+    }
+
+    float GetNeuronValue(float value) {
+        float val = (1.0f / (1.0f + (float) Math.exp(value)));
+        return val;
+    }
+
+    void OutputToFile(String filename)  {
+        List<String> lines = new ArrayList<String>();
+        for (ArrayList<Integer> weights : Weights) {
+            lines.add("");
+            for (Integer weight : weights) {
+                lines.set(lines.size() - 1, lines.get(lines.size() - 1) + weight.toString() + " ");
+            }
+        }
+        Path file = Paths.get(filename);
+        try {
+            Files.write(file, lines, Charset.forName("UTF-8"));
+        }
+        catch (IOException e) {
+            System.out.print("Could not write to file " + filename);
+        }
+
     }
 }

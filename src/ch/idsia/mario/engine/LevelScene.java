@@ -167,7 +167,7 @@ public class LevelScene extends Scene implements SpriteContext
                     case(-81):
                     case(4):  // kicked hidden brick
                     case(9):
-                        return -10;   // border, cannot pass through, can stand on
+                        return 35;   // border, cannot pass through, can stand on
 //                    case(9):
 //                        return -12; // hard formation border. Pay attention!
                     case(-124):
@@ -175,7 +175,7 @@ public class LevelScene extends Scene implements SpriteContext
                     case(-122):
                     case(-76):
                     case(-74):
-                        return -11; // half-border, can jump through from bottom and can stand on
+                        return 40; // half-border, can jump through from bottom and can stand on
                     case(10): case(11): case(26): case(27): // flower pot
                     case(14): case(30): case(46): // canon
                         return 20;  // angry flower pot or cannon

@@ -25,7 +25,7 @@ public class NeuralNetworkAIAgent implements Agent
         ArrayList<Integer> hiddenLayers = new ArrayList<Integer>();
         hiddenLayers.add(121);
         hiddenLayers.add(49);
-        neuralNetwork = new NeuralNetwork(968, hiddenLayers, 5);
+        neuralNetwork = new NeuralNetwork(484, hiddenLayers, 5);
         System.out.println("Made neural network");
     }
 
@@ -36,9 +36,11 @@ public class NeuralNetworkAIAgent implements Agent
 
     public boolean[] getAction(Environment observation)
     {
-        byte[][] levelObservation = observation.getLevelSceneObservation();
-        byte[][] enemyObservation = observation.getEnemiesObservation();
-        ArrayList<Float> input = getNetInput(levelObservation, enemyObservation);
+        //byte[][] levelObservation = observation.getLevelSceneObservation();
+        //byte[][] enemyObservation = observation.getEnemiesObservation();
+        //ArrayList<Float> input = getNetInput(levelObservation, enemyObservation);
+        byte[][] completeObservation = observation.getCompleteObservation();
+        ArrayList<Float> input = getNetInput(completeObservation);
         return neuralNetwork.GetNetOutput(input); // Empty action
     }
 
@@ -46,12 +48,23 @@ public class NeuralNetworkAIAgent implements Agent
         ArrayList<Float> input = new ArrayList<Float>();
         for (byte[] bytelist : level) {
             for (byte b : bytelist) {
-                input.add((float) b);
+                input.add(((float) b) / ((float) Byte.MAX_VALUE));
             }
         }
         for (byte[] bytelist : enemies) {
             for (byte b : bytelist) {
-                input.add((float) b);
+                input.add(((float) b) / ((float) Byte.MAX_VALUE));
+            }
+        }
+        return input;
+
+    }
+
+    public ArrayList<Float> getNetInput( byte[][] complete) {
+        ArrayList<Float> input = new ArrayList<Float>();
+        for (byte[] bytelist : complete) {
+            for (byte b : bytelist) {
+                input.add(((float) b) / ((float) Byte.MAX_VALUE));
             }
         }
         return input;
