@@ -5,6 +5,8 @@ import jdk.internal.util.xml.impl.Input;
 import sun.plugin.javascript.navig.Array;
 import sun.plugin.javascript.navig4.Layer;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -40,6 +42,33 @@ public class NeuralNetwork {
                     Weights.get(i - 1).add(0);
             }
         }
+    }
+
+    NeuralNetwork(File file) {
+        try {
+            Scanner input = new Scanner(file);
+
+            String line = input.nextLine();
+            Scanner lineInput = new Scanner(line);
+            while (lineInput.hasNextInt()) {
+                LayerNumbers.add(lineInput.nextInt());
+            }
+
+            while (input.hasNextLine()) {
+                line = input.nextLine();
+                lineInput = new Scanner(line);
+
+                Weights.add(new ArrayList<Integer>());
+                while (lineInput.hasNextInt()) {
+                    Weights.get(Weights.size() - 1).add(lineInput.nextInt());
+                }
+            }
+            input.close();
+        }
+        catch (FileNotFoundException e) {
+            System.out.println("Could not find file " + file);
+        }
+
     }
 
     void Randomize() {
@@ -91,6 +120,10 @@ public class NeuralNetwork {
 
     void OutputToFile(String filename)  {
         List<String> lines = new ArrayList<String>();
+        lines.add("");
+        for (int i=0; i<LayerNumbers.size(); i++) {
+            lines.set(0, lines.get(0) + " " + LayerNumbers.get(i));
+        }
         for (ArrayList<Integer> weights : Weights) {
             lines.add("");
             for (Integer weight : weights) {
