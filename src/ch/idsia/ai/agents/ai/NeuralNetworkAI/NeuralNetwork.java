@@ -25,6 +25,7 @@ public class NeuralNetwork {
     ArrayList< ArrayList<Integer> > Weights = new ArrayList<ArrayList<Integer>>();
 
     float Threshold = 0.46f;
+    float MutationRate = 0.05f;
 
     NeuralNetwork(Integer inputs, ArrayList<Integer> hiddenLayerNumbers, Integer outputs) {
         Calendar seed = Calendar.getInstance();
@@ -42,6 +43,13 @@ public class NeuralNetwork {
                     Weights.get(i - 1).add(0);
             }
         }
+    }
+
+    NeuralNetwork(NeuralNetwork parent, ArrayList<ArrayList<Integer>> newWeights){
+        ArrayList<Integer> layerNumbers = new ArrayList<Integer>();
+        layerNumbers = parent.LayerNumbers;
+        this.LayerNumbers = layerNumbers;
+        this.Weights = newWeights;
     }
 
     NeuralNetwork(File file) {
@@ -138,5 +146,82 @@ public class NeuralNetwork {
             System.out.print("Could not write to file " + filename);
         }
 
+    }
+
+    // Crossover 2 Neural Networks and return the child
+    public NeuralNetwork Crossover(NeuralNetwork Parent2){
+
+        // Just to make it more readable
+        NeuralNetwork Parent1 = this;
+
+        // What will be returned
+        NeuralNetwork Child = null;
+
+        // For the random numbers used here
+        Calendar seed = Calendar.getInstance();
+        Random random = new Random(seed.getTimeInMillis());
+
+        // Get a crossover point
+        int crossoverRow = random.nextInt(Parent1.Weights.size());
+        int crossoverColumn = random.nextInt(Parent1.Weights.get(crossoverRow).size());
+
+        // Will it mutate???
+        float MutationChance = random.nextFloat();
+
+        // Initialize the new weights array
+        ArrayList<ArrayList<Integer>> childWeights = new ArrayList<ArrayList<Integer>>();
+
+        for (int i=0; i<Parent1.Weights.size(); i++) {
+            childWeights.add(new ArrayList<Integer>());
+        }
+
+        // - - - - - Crossover - - - - -
+
+        // Go through all the rows
+        for(int i = 0; i < Parent1.Weights.size(); ++i){
+
+            // If the crossover row hasn't been reached, just copy parent 1
+            if(i < crossoverRow){
+                for(int j = 0; j < Parent1.Weights.get(i).size(); ++j){
+                    childWeights.get(i).add(Parent1.Weights.get(i).get(j));
+                }
+            }
+
+            // If we're at the crossover row, copy parent 1 until the specific
+            // point is reached. Then start copying parent 2.
+            if(i == crossoverRow){
+                for(int j = 0; j < crossoverColumn; ++j){
+                    childWeights.get(i).add(Parent1.Weights.get(i).get(j));
+                }
+                for(int j = crossoverColumn; j < Parent1.Weights.get(i).size(); ++j){
+                    childWeights.get(i).add(Parent2.Weights.get(i).get(j));
+                }
+            }
+
+            // Copy parent 2 now
+            if(i > crossoverRow){
+                for(int j = 0; j < Parent2.Weights.get(i).size(); ++j){
+                    childWeights.get(i).add(Parent2.Weights.get(i).get(j));
+                }
+            }
+        }
+
+        // - - - - - END CROSSOVER - - - - -
+
+        // Mutate
+        if(MutationChance <= this.MutationRate){
+            int swap1 = random.nextInt(Parent1.Weights.size());
+            int swap2 = random.nextInt(Parent1.Weights.size());
+
+            ArrayList<Integer> temp = childWeights.get(swap1);
+            childWeights.set(swap1, childWeights.get(swap2));
+            childWeights.set(swap2, temp);
+        }
+
+        // Create Child
+        Child = new NeuralNetwork(Parent1, childWeights);
+
+        // Return Child
+        return Child;
     }
 }

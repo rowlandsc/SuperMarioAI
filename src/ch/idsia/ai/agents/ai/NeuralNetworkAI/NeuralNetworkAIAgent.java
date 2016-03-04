@@ -26,6 +26,7 @@ public class NeuralNetworkAIAgent implements Agent
         hiddenLayers.add(121);
         hiddenLayers.add(49);
         neuralNetwork = new NeuralNetwork(484, hiddenLayers, 5);
+
         System.out.println("Made neural network");
     }
 
