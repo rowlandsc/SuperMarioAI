@@ -12,7 +12,9 @@ import ch.idsia.tools.Evaluator;
 import ch.idsia.utils.StatisticalSummary;
 import com.sun.org.apache.xpath.internal.SourceTree;
 
+import java.util.Calendar;
 import java.util.List;
+import java.util.Random;
 
 //import ch.idsia.ai.agents.icegic.robin.AStarAgent;
 //import ch.idsia.ai.agents.icegic.peterlawford.SlowAgent;
@@ -28,8 +30,12 @@ import java.util.List;
 public class GeneticAlgorithmRun
 {
     final static int numberOfTrials = 1;
-    final static int generationSize = 100 ;
+    final static int generationSize = 20 ;
 
+
+    static Agent[] population;
+    static double totalFitness;
+    static int populationThrowawayPercentage = 2;
 
     final static boolean scoring = true;
     private static int killsSum = 0;
@@ -40,7 +46,9 @@ public class GeneticAlgorithmRun
     public static void main(String[] args) {
         CmdLineOptions cmdLineOptions = new CmdLineOptions(args);
         EvaluationOptions evaluationOptions = cmdLineOptions;  // if none options mentioned, all defalults are used.
+        totalFitness =0;
         createAgentsPool();
+
 
         if (scoring)
             scoreAllAgents(cmdLineOptions);
@@ -58,9 +66,11 @@ public class GeneticAlgorithmRun
     private static boolean calledBefore = false;
     public static void createAgentsPool()
     {
+        population = new Agent[generationSize];
         for (int i=0; i<generationSize; i++) {
-
-            AgentsPool.addAgent(new NeuralNetworkAIAgent("Cody" + i));
+            NeuralNetworkAIAgent jawn = new NeuralNetworkAIAgent("Bryan" + i);
+            population[i] = jawn;
+            AgentsPool.addAgent(jawn);
         }
     }
 
@@ -74,7 +84,7 @@ public class GeneticAlgorithmRun
         NeuralNetworkAIAgent p2 = null;
         NeuralNetworkAIAgent wChild = null;
         int i = 1;
-        for (Agent agent : AgentsPool.getAgentsCollection())
+        for (Agent agent : population)
         {
 
             System.out.println("I am here.");
@@ -96,15 +106,16 @@ public class GeneticAlgorithmRun
             {
                 worstChild = agent.getCompScore();
                 wChild = (NeuralNetworkAIAgent) agent;
-            }
+            }/*
             if (i%5 ==0)
             {
                 //crossing over best parents
                 wChild.setNeuralNetwork(p1.getNeuralNetwork().Crossover(p2.getNeuralNetwork()));
 
+                System.out.println("Crossing over p1 and p2 to replace " + wChild.getName());
                 //adding new better child back to population
                 AgentsPool.addAgent(wChild);
-            }
+            } */
 
             System.out.println(agent.getCompScore() + " Score");
             System.out.println(parent1 + " Parent 1");
@@ -117,6 +128,20 @@ public class GeneticAlgorithmRun
         System.out.println(p2.getName() + " Parent 2");
         System.out.println(wChild.getName() + " Worst Child/n");
 
+        SortByFitness();
+        setTotalFitness();
+        setAccumulatedFitness();
+        addNewGeneration();
+
+        AgentsPool.getAgentsCollection().clear();
+
+        for(int j=0; j < generationSize; ++j) {
+            AgentsPool.addAgent(population[j]);
+        }
+
+        DisplayPopulation();
+        scoreAllAgents(cmdLineOptions);
+
 
 //        //crossing over best parents
 //        wChild.setNeuralNetwork(p1.getNeuralNetwork().Crossover(p2.getNeuralNetwork()));
@@ -126,6 +151,93 @@ public class GeneticAlgorithmRun
 
     }
 
+    static void addNewGeneration(){
+        for(int i = 0; i < generationSize/populationThrowawayPercentage; ++i){
+            population[generationSize - i - 1] = SelectAndCrossover();
+        }
+    }
+
+    public static void SortByFitness(){
+        Agent[] sortedPopulation = new Agent[generationSize];
+        Agent c = null;
+        for(int i=0; i < generationSize; ++i){
+            double max = -1;
+            int index = 0;
+            for(int j=0; j<generationSize; ++j){
+                if(population[j] != null){
+                    double score = population[j].getCompScore();
+                    if(max < score){
+                        max = score;
+                        c = population[j];
+                        index = j;
+                    }
+                }
+            }
+            sortedPopulation[i] = (NeuralNetworkAIAgent)c;
+            population[index] = null;
+        }
+        population = sortedPopulation;
+    }
+
+    static void setTotalFitness(){
+        totalFitness = 0;
+        for(int i=0; i<generationSize; ++i){
+            totalFitness += population[i].getCompScore();
+        }
+    }
+
+    static void setAccumulatedFitness(){
+        double accFitnessValue = 0;
+        for(int i = 0; i < generationSize; ++i){
+            accFitnessValue += population[i].getCompScore() / totalFitness;
+            ((NeuralNetworkAIAgent)population[i]).accumulatedFitness = accFitnessValue;
+        }
+    }
+
+    static NeuralNetworkAIAgent SelectAndCrossover(){
+        NeuralNetworkAIAgent[] selectedParents = new NeuralNetworkAIAgent[2];
+
+        // For the random numbers used here
+        Calendar seed = Calendar.getInstance();
+        Random random = new Random(seed.getTimeInMillis());
+
+        for(int i=0; i < 2; ++i){
+            float chance = random.nextFloat();
+            for(int j=0; j<generationSize; ++j){
+                NeuralNetworkAIAgent n = (NeuralNetworkAIAgent)population[j];
+                if(selectedParents[0] != null) {
+                    if (!selectedParents[0].equals(n)) {
+                        if (n.accumulatedFitness > chance) {
+                            selectedParents[i] = n;
+                            break;
+                        }
+                    }
+                }
+                else if(n.accumulatedFitness > chance){
+                        selectedParents[i] = n;
+                        break;
+                }
+                if(j == generationSize - 1){
+                    selectedParents[i] = n;
+                }
+            }
+        }
+
+        if(selectedParents[0] == null || selectedParents[1] == null){
+            System.out.println("NO PARENT SELECTED");
+        }
+
+        NeuralNetworkAIAgent child = new NeuralNetworkAIAgent("Child Of " + selectedParents[0].getName() + " + " + selectedParents[1].getName());
+        child.setNeuralNetwork(((NeuralNetworkAIAgent) selectedParents[0]).getNeuralNetwork().Crossover(((NeuralNetworkAIAgent)selectedParents[1]).getNeuralNetwork()));
+        return child;
+    }
+
+    public static void DisplayPopulation(){
+        System.out.println();
+        for(int i = 0; i < generationSize; ++i){
+            System.out.println(population[i].getName());
+        }
+    }
 
     public static void score(NeuralNetworkAIAgent agent, int startingSeed, CmdLineOptions cmdLineOptions) {
         TimingAgent controller = new TimingAgent (agent);

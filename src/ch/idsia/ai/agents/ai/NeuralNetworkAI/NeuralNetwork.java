@@ -21,7 +21,7 @@ public class NeuralNetwork {
     ArrayList< ArrayList<Integer> > Weights = new ArrayList<ArrayList<Integer>>();
 
     float Threshold = 0.46f;
-    float MutationRate = 0.05f;
+    float MutationRate = 0.1f;
 
     NeuralNetwork(Integer inputs, ArrayList<Integer> hiddenLayerNumbers, Integer outputs) {
         Calendar seed = Calendar.getInstance();
@@ -207,11 +207,14 @@ public class NeuralNetwork {
         // Mutate
         if(MutationChance <= this.MutationRate){
             int swap1 = random.nextInt(Parent1.Weights.size());
-            int swap2 = random.nextInt(Parent1.Weights.size());
+            int swap2 = random.nextInt(Parent1.Weights.get(swap1).size());
 
-            ArrayList<Integer> temp = childWeights.get(swap1);
-            childWeights.set(swap1, childWeights.get(swap2));
-            childWeights.set(swap2, temp);
+            int swap3 = random.nextInt(Parent1.Weights.size());
+            int swap4 = random.nextInt(Parent1.Weights.get(swap3).size());
+
+            int temp = childWeights.get(swap1).get(swap2);
+            childWeights.get(swap1).set(swap2, childWeights.get(swap3).get(swap4));
+            childWeights.get(swap3).set(swap4, temp);
         }
 
         // Create Child
