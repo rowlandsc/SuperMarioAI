@@ -42,6 +42,7 @@ public class GeneticAlgorithmRun
     private static int marioStatusSum = 0;
     private static int timeLeftSum = 0;
     private static int marioModeSum = 0;
+    private static int currentGeneration = 1;
 
     public static void main(String[] args) {
         CmdLineOptions cmdLineOptions = new CmdLineOptions(args);
@@ -50,8 +51,12 @@ public class GeneticAlgorithmRun
         createAgentsPool();
 
 
-        if (scoring)
-            scoreAllAgents(cmdLineOptions);
+        if (scoring) {
+            while (true) {
+                scoreAllAgents(cmdLineOptions);
+                currentGeneration++;
+            }
+        }
         else
         {
             Evaluator evaluator = new Evaluator(evaluationOptions);
@@ -140,7 +145,13 @@ public class GeneticAlgorithmRun
         }
 
         DisplayPopulation();
-        scoreAllAgents(cmdLineOptions);
+
+        for (int j=0; j<generationSize * 0.1f; j++) {
+            NeuralNetworkAIAgent nnagent = (NeuralNetworkAIAgent) population[j];
+            nnagent.Save("mofo" + currentGeneration + "-" + j + ".txt");
+        }
+
+        //scoreAllAgents(cmdLineOptions);
 
 
 //        //crossing over best parents

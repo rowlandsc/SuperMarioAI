@@ -80,6 +80,11 @@ public class NeuralNetworkAIAgent implements Agent
 
     }
 
+    public void Save(String filename) {
+        neuralNetwork.OutputToFile(filename);
+    }
+
+
     public AGENT_TYPE getType()
     {
         return AGENT_TYPE.AI;

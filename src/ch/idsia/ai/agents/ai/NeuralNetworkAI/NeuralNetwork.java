@@ -122,7 +122,7 @@ public class NeuralNetwork {
         return val;
     }
 
-    void OutputToFile(String filename)  {
+    public void OutputToFile(String filename)  {
         List<String> lines = new ArrayList<String>();
         lines.add("");
         for (int i=0; i<LayerNumbers.size(); i++) {
