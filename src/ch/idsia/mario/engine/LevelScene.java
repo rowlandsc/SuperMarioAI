@@ -41,7 +41,7 @@ public class LevelScene extends Scene implements SpriteContext
 
     public void setTotalTime(int totalTime) {  this.totalTime = totalTime; }
 
-    private int totalTime = 200;
+    private int totalTime = 10;
 
     //    private Recorder recorder = new Recorder();
     //    private Replayer replayer = null;

@@ -34,6 +34,16 @@ public class SRNAgent implements Agent, Evolvable {
         return new SRNAgent (srn.copy ());
     }
 
+    public void setCompScore(double compScore)
+    {
+
+    }
+
+    public double getCompScore()
+    {
+        return 0;
+    }
+
     public void reset() {
         srn.reset ();
     }

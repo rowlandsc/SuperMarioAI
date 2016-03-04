@@ -1,7 +1,5 @@
 package wox.serial;
 
-import java.util.HashSet;
-
 /**
  * Created by IntelliJ IDEA.
  * User: sml

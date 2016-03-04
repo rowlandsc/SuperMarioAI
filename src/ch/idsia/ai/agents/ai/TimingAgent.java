@@ -43,6 +43,16 @@ public class TimingAgent implements Agent {
         agent.setName (name);
     }
 
+    public void setCompScore(double compScore)
+    {
+
+    }
+
+    public double getCompScore()
+    {
+        return 0;
+    }
+
     public double averageTimeTaken () {
         double average = ((double) timeTaken) / evaluations;
         timeTaken = 0;

@@ -1,8 +1,7 @@
 package wox.serial;
 
-import java.util.ArrayList;
-import java.util.AbstractList;
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.

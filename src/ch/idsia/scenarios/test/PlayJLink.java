@@ -3,10 +3,10 @@ package ch.idsia.scenarios.test;
 import ch.idsia.ai.SRN;
 import ch.idsia.ai.agents.Agent;
 import ch.idsia.ai.agents.ai.LargeSRNAgent;
-import ch.idsia.tools.EvaluationOptions;
 import ch.idsia.tools.CmdLineOptions;
-import ch.idsia.tools.Evaluator;
 import ch.idsia.tools.EvaluationInfo;
+import ch.idsia.tools.EvaluationOptions;
+import ch.idsia.tools.Evaluator;
 
 /**
  * Created by IntelliJ IDEA.

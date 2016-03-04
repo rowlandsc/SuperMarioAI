@@ -34,6 +34,16 @@ public class  SimpleMLPAgent implements Agent, Evolvable {
         return new SimpleMLPAgent (mlp.copy ());
     }
 
+    public void setCompScore(double compScore)
+    {
+
+    }
+
+    public double getCompScore()
+    {
+        return 0;
+    }
+
     public void reset() {
         mlp.reset ();
     }

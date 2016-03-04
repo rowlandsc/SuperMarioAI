@@ -1,11 +1,9 @@
 package ch.idsia.scenarios;
 
-import ch.idsia.ai.agents.ai.*;
 import ch.idsia.ai.agents.Agent;
 import ch.idsia.ai.agents.AgentsPool;
-//import ch.idsia.ai.agents.icegic.robin.AStarAgent;
-//import ch.idsia.ai.agents.icegic.peterlawford.SlowAgent;
 import ch.idsia.ai.agents.ai.NeuralNetworkAI.NeuralNetworkAIAgent;
+import ch.idsia.ai.agents.ai.TimingAgent;
 import ch.idsia.tools.CmdLineOptions;
 import ch.idsia.tools.EvaluationInfo;
 import ch.idsia.tools.EvaluationOptions;
@@ -14,7 +12,8 @@ import ch.idsia.utils.StatisticalSummary;
 
 import java.util.List;
 
-import competition.cig.sergeykarakovskiy.SergeyKarakovskiy_JumpingAgent;
+//import ch.idsia.ai.agents.icegic.robin.AStarAgent;
+//import ch.idsia.ai.agents.icegic.peterlawford.SlowAgent;
 
 /**
  * Created by IntelliJ IDEA.

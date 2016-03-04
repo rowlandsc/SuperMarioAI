@@ -2,6 +2,7 @@ package ch.idsia.scenarios.test;
 
 import ch.idsia.ai.agents.Agent;
 import ch.idsia.ai.agents.AgentsPool;
+import ch.idsia.ai.agents.ai.NeuralNetworkAI.NeuralNetwork;
 import ch.idsia.ai.agents.ai.NeuralNetworkAI.NeuralNetworkAIAgent;
 import ch.idsia.ai.agents.ai.TimingAgent;
 import ch.idsia.tools.CmdLineOptions;
@@ -9,6 +10,7 @@ import ch.idsia.tools.EvaluationInfo;
 import ch.idsia.tools.EvaluationOptions;
 import ch.idsia.tools.Evaluator;
 import ch.idsia.utils.StatisticalSummary;
+import com.sun.org.apache.xpath.internal.SourceTree;
 
 import java.util.List;
 
@@ -26,7 +28,7 @@ import java.util.List;
 public class GeneticAlgorithmRun
 {
     final static int numberOfTrials = 1;
-    final static int generationSize = 10;
+    final static int generationSize = 100 ;
 
 
     final static boolean scoring = true;
@@ -58,24 +60,80 @@ public class GeneticAlgorithmRun
     {
         for (int i=0; i<generationSize; i++) {
 
-            AgentsPool.addAgent(new NeuralNetworkAIAgent("Alex" + i));
+            AgentsPool.addAgent(new NeuralNetworkAIAgent("Cody" + i));
         }
     }
 
     public static void scoreAllAgents(CmdLineOptions cmdLineOptions)
     {
+        double parent1 = 0;
+        double parent2 = 0;
+        double worstChild = 1000000;
+
+        NeuralNetworkAIAgent p1 = null;
+        NeuralNetworkAIAgent p2 = null;
+        NeuralNetworkAIAgent wChild = null;
+        int i = 1;
         for (Agent agent : AgentsPool.getAgentsCollection())
-            score(agent, 3143, cmdLineOptions);
+        {
+
+            System.out.println("I am here.");
+
+            score((NeuralNetworkAIAgent) agent, 3143, cmdLineOptions);
+            if (parent1 < agent.getCompScore())
+            {
+                p2 = p1;
+                p1 = (NeuralNetworkAIAgent) agent;
+                parent2 = parent1;
+                parent1 = agent.getCompScore();
+            }
+            else if(parent2 < agent.getCompScore())
+            {
+                p2 = (NeuralNetworkAIAgent) agent;
+                parent2 = agent.getCompScore();
+            }
+            if (worstChild > agent.getCompScore())
+            {
+                worstChild = agent.getCompScore();
+                wChild = (NeuralNetworkAIAgent) agent;
+            }
+            if (i%5 ==0)
+            {
+                //crossing over best parents
+                wChild.setNeuralNetwork(p1.getNeuralNetwork().Crossover(p2.getNeuralNetwork()));
+
+                //adding new better child back to population
+                AgentsPool.addAgent(wChild);
+            }
+
+            System.out.println(agent.getCompScore() + " Score");
+            System.out.println(parent1 + " Parent 1");
+            System.out.println(parent2 + " Parent 2");
+            System.out.println(worstChild + " Worst Child");
+            i++;
+        }
+
+        System.out.println(p1.getName() + " Parent 1");
+        System.out.println(p2.getName() + " Parent 2");
+        System.out.println(wChild.getName() + " Worst Child/n");
+
+
+//        //crossing over best parents
+//        wChild.setNeuralNetwork(p1.getNeuralNetwork().Crossover(p2.getNeuralNetwork()));
+//
+//       //adding new better child back to population
+//        AgentsPool.addAgent(wChild);
+
     }
 
 
-    public static void score(Agent agent, int startingSeed, CmdLineOptions cmdLineOptions) {
+    public static void score(NeuralNetworkAIAgent agent, int startingSeed, CmdLineOptions cmdLineOptions) {
         TimingAgent controller = new TimingAgent (agent);
 //        RegisterableAgent.registerAgent (controller);
 //        EvaluationOptions options = new CmdLineOptions(new String[0]);
         EvaluationOptions options = cmdLineOptions;
 
-        options.setNumberOfTrials(1);
+        options.setNumberOfTrials(numberOfTrials); // numberof trials here or 1?
 //        options.setVisualization(false);
 //        options.setMaxFPS(true);
         System.out.println("\nScoring controller " + agent.getName() + " with starting seed " + startingSeed);
@@ -87,9 +145,13 @@ public class GeneticAlgorithmRun
         marioModeSum = 0;
 
         competitionScore += testConfig (controller, options, startingSeed, 0, false);
-        competitionScore += testConfig (controller, options, startingSeed, 3, false);
-        competitionScore += testConfig (controller, options, startingSeed, 5, false);
-        competitionScore += testConfig (controller, options, startingSeed, 10, false);
+        //competitionScore += testConfig (controller, options, startingSeed, 3, false);
+        //competitionScore += testConfig (controller, options, startingSeed, 5, false);
+        //competitionScore += testConfig (controller, options, startingSeed, 10, false);
+
+        //Set comp score on agent
+        agent.setCompScore(competitionScore);
+
         System.out.println("Competition score: " + competitionScore);
         System.out.println("Total kills Sum = " + killsSum);
         System.out.println("marioStatus Sum  = " + marioStatusSum);

@@ -18,6 +18,12 @@ public class NeuralNetworkAIAgent implements Agent
     protected String name = "NeuralNetworkAIAgent.Gir";
     protected NeuralNetwork neuralNetwork;
 
+
+
+    protected double compScore = 0;
+
+
+
     public NeuralNetworkAIAgent(String s)
     {
         setName(s);
@@ -29,6 +35,7 @@ public class NeuralNetworkAIAgent implements Agent
 
         System.out.println("Made neural network");
     }
+
 
     public void reset()
     {
@@ -80,4 +87,24 @@ public class NeuralNetworkAIAgent implements Agent
     public String getName() {        return name;    }
 
     public void setName(String Name) { this.name = Name;    }
+
+    public double getCompScore()
+    {
+    return compScore;
+    }
+
+    public void setCompScore(double compScore)
+    {
+        this.compScore = compScore;
+    }
+    public NeuralNetwork getNeuralNetwork()
+    {
+        return neuralNetwork;
+    }
+
+    public void setNeuralNetwork(NeuralNetwork neuralNetwork)
+    {
+        this.neuralNetwork = neuralNetwork;
+    }
+
 }

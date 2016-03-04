@@ -1,9 +1,6 @@
 package ch.idsia.ai.agents.ai.NeuralNetworkAI;
 
 import ch.idsia.mario.environments.Environment;
-import jdk.internal.util.xml.impl.Input;
-import sun.plugin.javascript.navig.Array;
-import sun.plugin.javascript.navig4.Layer;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,7 +9,6 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.sql.Time;
 import java.util.*;
 
 /**
@@ -110,14 +106,14 @@ public class NeuralNetwork {
         for (int i=0; i<values.get(values.size() - 1).size(); i++) {
             if (values.get(values.size() - 1).get(i) > Threshold) {
                 buttons[i] = true;
-                System.out.print("1");
+                //System.out.print("1");
             }
             else {
                 buttons[i] = false;
-                System.out.print("0");
+                //System.out.print("0");
             }
         }
-        System.out.println();
+        //System.out.println();
         return buttons;
     }
 

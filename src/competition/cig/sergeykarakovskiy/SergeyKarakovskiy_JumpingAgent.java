@@ -1,8 +1,8 @@
 package competition.cig.sergeykarakovskiy;
 
 import ch.idsia.ai.agents.Agent;
-import ch.idsia.mario.environments.Environment;
 import ch.idsia.mario.engine.sprites.Mario;
+import ch.idsia.mario.environments.Environment;
 
 /**
  * Created by IntelliJ IDEA.
@@ -21,6 +21,16 @@ public class SergeyKarakovskiy_JumpingAgent implements Agent
     {
         setName("SergeyKarakovskiy_JumpingAgent");
         reset();
+    }
+
+    public void setCompScore(double compScore)
+    {
+
+    }
+
+    public double getCompScore()
+    {
+        return 0;
     }
 
     public void reset()

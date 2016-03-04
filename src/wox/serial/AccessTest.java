@@ -1,15 +1,12 @@
 package wox.serial;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
+import sun.reflect.ReflectionFactory;
+
 import java.io.ObjectStreamClass;
 import java.io.Serializable;
-
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.security.AccessController;
-import sun.reflect.ReflectionFactory;
 
 
 /**

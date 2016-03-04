@@ -27,6 +27,16 @@ public class CheaterKeyboardAgent extends KeyAdapter implements Agent {
         reset();
     }
 
+    public void setCompScore(double compScore)
+    {
+
+    }
+
+    public double getCompScore()
+    {
+        return 0;
+    }
+
     public void reset()
     {
         // Just check you keyboard.

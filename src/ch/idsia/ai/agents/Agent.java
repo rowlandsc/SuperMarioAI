@@ -13,6 +13,8 @@ public interface Agent
 {
     public enum AGENT_TYPE {AI, HUMAN, TCP_SERVER }
 
+    public void setCompScore(double compScore);
+    public double getCompScore();
     // clears all dynamic data, such as hidden layers in recurrent networks
     // just implement an empty method for a reactive controller
     public void reset();

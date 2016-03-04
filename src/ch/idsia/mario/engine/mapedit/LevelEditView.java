@@ -1,17 +1,14 @@
 package ch.idsia.mario.engine.mapedit;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
+import ch.idsia.mario.engine.Art;
+import ch.idsia.mario.engine.LevelRenderer;
+import ch.idsia.mario.engine.level.Level;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-
-import javax.swing.*;
-
-import ch.idsia.mario.engine.level.*;
-import ch.idsia.mario.engine.Art;
-import ch.idsia.mario.engine.LevelRenderer;
 
 
 public class LevelEditView extends JComponent implements MouseListener, MouseMotionListener

@@ -1,15 +1,12 @@
 package ch.idsia.mario.engine.mapedit;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
+import ch.idsia.mario.engine.Art;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-
-import javax.swing.*;
-
-import ch.idsia.mario.engine.Art;
 
 
 public class TilePicker extends JComponent implements MouseListener, MouseMotionListener

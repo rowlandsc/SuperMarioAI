@@ -1,6 +1,6 @@
 package ch.idsia.mario.engine.level;
 
-import java.util.*;
+import java.util.Random;
 
 public final class ImprovedNoise
 {

@@ -15,6 +15,16 @@ public class SimpleAgent implements Agent
     protected boolean Action[] = new boolean[Environment.numberOfButtons];
     protected String Name = "SimpleAgent";
 
+    public void setCompScore(double compScore)
+    {
+
+    }
+
+    public double getCompScore()
+    {
+        return 0;
+    }
+
     public void reset()
     {
         Action = new boolean[Environment.numberOfButtons];

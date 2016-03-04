@@ -1,7 +1,7 @@
 package ch.idsia.tools;
 
-import ch.idsia.mario.engine.GlobalOptions;
 import ch.idsia.ai.agents.AgentsPool;
+import ch.idsia.mario.engine.GlobalOptions;
 
 import java.util.Map;
 

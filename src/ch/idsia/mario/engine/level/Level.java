@@ -1,6 +1,8 @@
 package ch.idsia.mario.engine.level;
 
-import java.io.*;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
 
 
 public class Level

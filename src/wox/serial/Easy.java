@@ -1,13 +1,13 @@
 package wox.serial;
 
-import org.jdom.Element;
 import org.jdom.Document;
+import org.jdom.Element;
 import org.jdom.input.SAXBuilder;
 import org.jdom.output.XMLOutputter;
 
+import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.InputStream;
-import java.io.FileInputStream;
 
 /**
  * Created by IntelliJ IDEA.

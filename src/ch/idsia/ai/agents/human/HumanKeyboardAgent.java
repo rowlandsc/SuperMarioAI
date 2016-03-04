@@ -28,6 +28,16 @@ public class HumanKeyboardAgent extends KeyAdapter implements Agent
 //        RegisterableAgent.registerAgent(this);
     }
 
+    public void setCompScore(double compScore)
+    {
+
+    }
+
+    public double getCompScore()
+    {
+        return 0;
+    }
+
     public void reset()
     {
         // Just check you keyboard. Especially arrow buttons and 'A' and 'S'!

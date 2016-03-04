@@ -1,8 +1,9 @@
 package ch.idsia.mario.engine;
 
+import ch.idsia.mario.engine.level.Level;
+
 import java.awt.*;
 import java.util.Random;
-import ch.idsia.mario.engine.level.*;
 
 
 public class BgRenderer

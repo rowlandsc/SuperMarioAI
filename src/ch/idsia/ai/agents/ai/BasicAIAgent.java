@@ -20,6 +20,16 @@ public class BasicAIAgent implements Agent
         setName(s);
     }
 
+    public void setCompScore(double compScore)
+    {
+
+    }
+
+    public double getCompScore()
+    {
+        return 0;
+    }
+
     public void reset()
     {
         action = new boolean[Environment.numberOfButtons];// Empty action

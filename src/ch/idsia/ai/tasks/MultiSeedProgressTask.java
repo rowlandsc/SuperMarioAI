@@ -1,9 +1,9 @@
 package ch.idsia.ai.tasks;
 
+import ch.idsia.ai.agents.Agent;
+import ch.idsia.tools.EvaluationInfo;
 import ch.idsia.tools.EvaluationOptions;
 import ch.idsia.tools.Evaluator;
-import ch.idsia.tools.EvaluationInfo;
-import ch.idsia.ai.agents.Agent;
 
 import java.util.List;
 
