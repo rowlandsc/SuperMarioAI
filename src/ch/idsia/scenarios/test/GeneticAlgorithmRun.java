@@ -45,9 +45,30 @@ public class GeneticAlgorithmRun
     private static int generatedAgents = 0;
     private static String name = "Gangsta";
 
+    public static class SSBoolPair {
+        public StatisticalSummary ss;
+        public Boolean b;
+
+        SSBoolPair(StatisticalSummary a, Boolean z) {
+            ss = a;
+            b = z;
+        }
+    }
+
+    public static class DoubleBoolPair {
+        public Double d;
+        public Boolean b;
+
+        DoubleBoolPair(Double a, Boolean z) {
+            d = a;
+            b = z;
+        }
+    }
+
     public static void main(String[] args) {
         CmdLineOptions cmdLineOptions = new CmdLineOptions(args);
         EvaluationOptions evaluationOptions = cmdLineOptions;  // if none options mentioned, all defalults are used.
+        evaluationOptions.setLevelDifficulty(3);
         totalFitness =0;
 
         System.out.println("Enter name to use: ");
@@ -296,10 +317,15 @@ public class GeneticAlgorithmRun
         timeLeftSum = 0;
         marioModeSum = 0;
 
-        competitionScore += testConfig (controller, options, startingSeed, 0, false);
-        //competitionScore += testConfig (controller, options, startingSeed, 3, false);
-        //competitionScore += testConfig (controller, options, startingSeed, 5, false);
-        //competitionScore += testConfig (controller, options, startingSeed, 10, false);
+        boolean again = true;
+        int i = 0;
+        while (again && i < 100) {
+            DoubleBoolPair res = testConfig (controller, options, startingSeed + i, i % 10, false);
+            competitionScore += res.d;
+            again = res.b;
+            i++;
+        }
+
 
         //Set comp score on agent
         agent.setCompScore(competitionScore);
@@ -312,10 +338,11 @@ public class GeneticAlgorithmRun
         System.out.println("TOTAL SUM for " + agent.getName() + " = " + (competitionScore + killsSum + marioStatusSum + marioModeSum + timeLeftSum));
     }
 
-    public static double testConfig (TimingAgent controller, EvaluationOptions options, int seed, int levelDifficulty, boolean paused) {
+    public static DoubleBoolPair testConfig (TimingAgent controller, EvaluationOptions options, int seed, int levelDifficulty, boolean paused) {
         options.setLevelDifficulty(levelDifficulty);
         options.setPauseWorld(paused);
-        StatisticalSummary ss = test (controller, options, seed);
+        SSBoolPair res = test (controller, options, seed);
+        StatisticalSummary ss = res.ss;
         double averageTimeTaken = controller.averageTimeTaken();
         System.out.printf("Difficulty %d score %.4f (avg time %.4f)\n",
                 levelDifficulty, ss.mean(), averageTimeTaken);
@@ -324,22 +351,30 @@ public class GeneticAlgorithmRun
                     "Controller disqualified");
             System.exit (0);
         }
-        return ss.mean();
+
+        DoubleBoolPair res2 = new DoubleBoolPair(ss.mean(), res.b);
+
+        return res2;
     }
 
-    public static StatisticalSummary test (Agent controller, EvaluationOptions options, int seed) {
+    public static SSBoolPair test (Agent controller, EvaluationOptions options, int seed) {
         StatisticalSummary ss = new StatisticalSummary ();
+        Boolean won = false;
         int kills = 0;
         int timeLeft = 0;
         int marioMode = 0;
         int marioStatus = 0;
 
+        float totalDistance = 0;
+
         options.setNumberOfTrials(numberOfTrials);
         options.resetCurrentTrial();
+        int rounds = 1;
         for (int i = 0; i < numberOfTrials; i++) {
             options.setLevelRandSeed(seed + i);
             options.setLevelLength (200 + (i * 128) + (seed % (i + 1)));
             options.setLevelType(i % 3);
+            options.setLevelDifficulty(options.getLevelDifficulty());
             controller.reset();
             options.setAgent(controller);
             Evaluator evaluator = new Evaluator (options);
@@ -354,6 +389,8 @@ public class GeneticAlgorithmRun
 //            System.out.println("result.marioStatus = " + result.marioStatus);
 //            System.out.println("result.computeKillsTotal() = " + result.computeKillsTotal());
             ss.add (result.computeDistancePassed());
+
+            if (result.livesLeft > 0 && result.timeLeft > 0) won = true;
         }
 
         System.out.println("\n===================\nStatistics over 10 runs for " + controller.getName());
@@ -368,6 +405,8 @@ public class GeneticAlgorithmRun
         timeLeftSum += timeLeft;
         marioModeSum += marioMode;
 
-        return ss;
+        SSBoolPair res = new SSBoolPair(ss, won);
+
+        return res;
     }
 }

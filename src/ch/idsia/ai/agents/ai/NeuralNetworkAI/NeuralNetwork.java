@@ -176,7 +176,7 @@ public class NeuralNetwork {
         // Go through all the rows
         for(int i = 0; i < Parent1.Weights.size(); ++i){
 
-            // If the crossover row hasn't been reached, just copy parent 1
+            /*// If the crossover row hasn't been reached, just copy parent 1
             if(i < crossoverRow){
                 for(int j = 0; j < Parent1.Weights.get(i).size(); ++j){
                     childWeights.get(i).add(Parent1.Weights.get(i).get(j));
@@ -199,6 +199,19 @@ public class NeuralNetwork {
                 for(int j = 0; j < Parent2.Weights.get(i).size(); ++j){
                     childWeights.get(i).add(Parent2.Weights.get(i).get(j));
                 }
+            }*/
+
+            for (int j=0; j < Weights.get(i).size(); j++) {
+                int r = random.nextInt(99);
+                if (r < 33) {
+                    childWeights.get(i).add(Parent1.Weights.get(i).get(j));
+                }
+                else if (r < 66) {
+                    childWeights.get(i).add(Parent2.Weights.get(i).get(j));
+                }
+                else {
+                    childWeights.get(i).add((Parent1.Weights.get(i).get(j) + Parent2.Weights.get(i).get(j)) / 2);
+                }
             }
         }
 
@@ -209,7 +222,7 @@ public class NeuralNetwork {
 
             float keepMutatingChance = random.nextFloat();
 
-            while(keepMutatingChance < .9999f) {
+            while(keepMutatingChance < .99999f) {
                 int swap1 = random.nextInt(Parent1.Weights.size());
                 int swap2 = random.nextInt(Parent1.Weights.get(swap1).size());
 
