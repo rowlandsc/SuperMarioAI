@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d5303f7-bcb4-448b-b726-699a5aea762f" name="Default" comment="Clean">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jesus1-0.txt" afterPath="$PROJECT_DIR$/jesus1-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jesus1-1.txt" afterPath="$PROJECT_DIR$/jesus1-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jesus2-0.txt" afterPath="$PROJECT_DIR$/jesus2-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jesus2-1.txt" afterPath="$PROJECT_DIR$/jesus2-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mario.iws" afterPath="$PROJECT_DIR$/mario.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetworkAIAgent.java" afterPath="$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetworkAIAgent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/idsia/scenarios/test/GeneticAlgorithmRun.java" afterPath="$PROJECT_DIR$/src/ch/idsia/scenarios/test/GeneticAlgorithmRun.java" />
     </list>
     <ignored path="mario.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -84,7 +88,7 @@
       <file leaf-file-name="GeneticAlgorithmRun.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ch/idsia/scenarios/test/GeneticAlgorithmRun.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.034483">
+            <state vertical-scroll-proportion="0.0">
               <caret line="95" column="38" selection-start-line="95" selection-start-column="38" selection-end-line="95" selection-end-column="38" />
               <folding />
             </state>
@@ -96,78 +100,26 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="652" column="0" selection-start-line="652" selection-start-column="0" selection-end-line="652" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#54151#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#6252#6253#0" expanded="false" />
-                <element signature="e#6320#6321#0" expanded="false" />
-                <element signature="e#10189#10190#0" expanded="false" />
-                <element signature="e#10216#10217#0" expanded="false" />
-                <element signature="e#10398#10399#0" expanded="false" />
-                <element signature="e#10430#10431#0" expanded="false" />
-                <element signature="e#10907#10908#0" expanded="false" />
-                <element signature="e#10945#10946#0" expanded="false" />
-                <element signature="e#13541#13542#0" expanded="false" />
-                <element signature="e#13596#13597#0" expanded="false" />
-                <element signature="e#15414#15415#0" expanded="false" />
-                <element signature="e#15459#15460#0" expanded="false" />
-                <element signature="e#24549#24550#0" expanded="false" />
-                <element signature="e#24603#24604#0" expanded="false" />
-                <element signature="e#30347#30348#0" expanded="false" />
-                <element signature="e#30384#30385#0" expanded="false" />
-                <element signature="e#30684#30685#0" expanded="false" />
-                <element signature="e#30716#30717#0" expanded="false" />
-                <element signature="e#31041#31042#0" expanded="false" />
-                <element signature="e#31086#31087#0" expanded="false" />
-                <element signature="e#33262#33263#0" expanded="false" />
-                <element signature="e#33304#33305#0" expanded="false" />
-                <element signature="e#33338#33339#0" expanded="false" />
-                <element signature="e#33375#33376#0" expanded="false" />
-                <element signature="e#33413#33414#0" expanded="false" />
-                <element signature="e#33454#33455#0" expanded="false" />
-                <element signature="e#38943#38944#0" expanded="false" />
-                <element signature="e#38994#38995#0" expanded="false" />
-                <element signature="e#39436#39437#0" expanded="false" />
-                <element signature="e#39481#39482#0" expanded="false" />
-                <element signature="e#39886#39887#0" expanded="false" />
-                <element signature="e#39960#39961#0" expanded="false" />
-                <element signature="e#40600#40601#0" expanded="false" />
-                <element signature="e#40658#40659#0" expanded="false" />
-                <element signature="e#42227#42228#0" expanded="false" />
-                <element signature="e#42280#42281#0" expanded="false" />
-                <element signature="e#42326#42327#0" expanded="false" />
-                <element signature="e#42383#42384#0" expanded="false" />
-                <element signature="e#44775#44776#0" expanded="false" />
-                <element signature="e#44842#44843#0" expanded="false" />
-                <element signature="e#46390#46391#0" expanded="false" />
-                <element signature="e#46455#46456#0" expanded="false" />
-                <element signature="e#51499#51500#0" expanded="false" />
-                <element signature="e#51557#51558#0" expanded="false" />
-                <element signature="e#51597#51598#0" expanded="false" />
-                <element signature="e#51690#51691#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NeuralNetworkAIAgent.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NeuralNetworkAIAgent.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetworkAIAgent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="48" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
-              <folding>
-                <element signature="e#2581#2582#0" expanded="true" />
-                <element signature="e#2633#2634#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.33530572">
+              <caret line="61" column="58" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="58" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NeuralNetwork.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NeuralNetwork.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetwork.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.8574712">
-              <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -871,9 +823,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1257,7 +1209,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32356256" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30156657" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30156657" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18875" sideWeight="0.66854566" order="0" side_tool="false" content_ui="tabs" />
@@ -1265,7 +1217,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39556137" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39556137" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1731,14 +1683,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/idsia/mario/engine/GlobalOptions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="30" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ch/idsia/tools/EvaluationOptions.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1751,56 +1695,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="652" column="0" selection-start-line="652" selection-start-column="0" selection-end-line="652" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#54151#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#6252#6253#0" expanded="false" />
-            <element signature="e#6320#6321#0" expanded="false" />
-            <element signature="e#10189#10190#0" expanded="false" />
-            <element signature="e#10216#10217#0" expanded="false" />
-            <element signature="e#10398#10399#0" expanded="false" />
-            <element signature="e#10430#10431#0" expanded="false" />
-            <element signature="e#10907#10908#0" expanded="false" />
-            <element signature="e#10945#10946#0" expanded="false" />
-            <element signature="e#13541#13542#0" expanded="false" />
-            <element signature="e#13596#13597#0" expanded="false" />
-            <element signature="e#15414#15415#0" expanded="false" />
-            <element signature="e#15459#15460#0" expanded="false" />
-            <element signature="e#24549#24550#0" expanded="false" />
-            <element signature="e#24603#24604#0" expanded="false" />
-            <element signature="e#30347#30348#0" expanded="false" />
-            <element signature="e#30384#30385#0" expanded="false" />
-            <element signature="e#30684#30685#0" expanded="false" />
-            <element signature="e#30716#30717#0" expanded="false" />
-            <element signature="e#31041#31042#0" expanded="false" />
-            <element signature="e#31086#31087#0" expanded="false" />
-            <element signature="e#33262#33263#0" expanded="false" />
-            <element signature="e#33304#33305#0" expanded="false" />
-            <element signature="e#33338#33339#0" expanded="false" />
-            <element signature="e#33375#33376#0" expanded="false" />
-            <element signature="e#33413#33414#0" expanded="false" />
-            <element signature="e#33454#33455#0" expanded="false" />
-            <element signature="e#38943#38944#0" expanded="false" />
-            <element signature="e#38994#38995#0" expanded="false" />
-            <element signature="e#39436#39437#0" expanded="false" />
-            <element signature="e#39481#39482#0" expanded="false" />
-            <element signature="e#39886#39887#0" expanded="false" />
-            <element signature="e#39960#39961#0" expanded="false" />
-            <element signature="e#40600#40601#0" expanded="false" />
-            <element signature="e#40658#40659#0" expanded="false" />
-            <element signature="e#42227#42228#0" expanded="false" />
-            <element signature="e#42280#42281#0" expanded="false" />
-            <element signature="e#42326#42327#0" expanded="false" />
-            <element signature="e#42383#42384#0" expanded="false" />
-            <element signature="e#44775#44776#0" expanded="false" />
-            <element signature="e#44842#44843#0" expanded="false" />
-            <element signature="e#46390#46391#0" expanded="false" />
-            <element signature="e#46455#46456#0" expanded="false" />
-            <element signature="e#51499#51500#0" expanded="false" />
-            <element signature="e#51557#51558#0" expanded="false" />
-            <element signature="e#51597#51598#0" expanded="false" />
-            <element signature="e#51690#51691#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1812,29 +1707,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetworkAIAgent.java">
+    <entry file="file://$PROJECT_DIR$/src/ch/idsia/scenarios/test/GeneticAlgorithmRun.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="48" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
-          <folding>
-            <element signature="e#2581#2582#0" expanded="true" />
-            <element signature="e#2633#2634#0" expanded="true" />
-          </folding>
+          <caret line="95" column="38" selection-start-line="95" selection-start-column="38" selection-end-line="95" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/idsia/scenarios/test/GeneticAlgorithmRun.java">
+    <entry file="file://$PROJECT_DIR$/src/ch/idsia/mario/engine/GlobalOptions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.034483">
-          <caret line="95" column="38" selection-start-line="95" selection-start-column="38" selection-end-line="95" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="30" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetwork.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8574712">
-          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetworkAIAgent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33530572">
+          <caret line="61" column="58" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="58" />
           <folding />
         </state>
       </provider>
