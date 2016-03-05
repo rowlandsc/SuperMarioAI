@@ -34,7 +34,7 @@ public class NeuralNetworkAIAgent implements Agent
         ArrayList<Integer> hiddenLayers = new ArrayList<Integer>();
         hiddenLayers.add(121);
         hiddenLayers.add(49);
-        neuralNetwork = new NeuralNetwork(484, hiddenLayers, 5);
+        neuralNetwork = new NeuralNetwork(488, hiddenLayers, 5);
 
         System.out.println("Made neural network");
     }
@@ -58,6 +58,10 @@ public class NeuralNetworkAIAgent implements Agent
         //ArrayList<Float> input = getNetInput(levelObservation, enemyObservation);
         byte[][] completeObservation = observation.getCompleteObservation();
         ArrayList<Float> input = getNetInput(completeObservation);
+        input.add(observation.mayMarioJump() ? 250f : -250f );
+        input.add(observation.isMarioOnGround() ? 250f : -250f );
+        input.add(observation.isMarioCarrying() ? 250f : -250f );
+        input.add(observation.getMarioMode() * 10f);
         return neuralNetwork.GetNetOutput(input); // Empty action
     }
 
