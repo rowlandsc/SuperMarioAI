@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d5303f7-bcb4-448b-b726-699a5aea762f" name="Default" comment="Clean">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetwork.java" afterPath="$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetwork.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetworkAIAgent.java" afterPath="$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetworkAIAgent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/idsia/scenarios/test/GeneticAlgorithmRun.java" afterPath="$PROJECT_DIR$/src/ch/idsia/scenarios/test/GeneticAlgorithmRun.java" />
     </list>
     <ignored path="mario.iws" />
@@ -81,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GeneticAlgorithmRun.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GeneticAlgorithmRun.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ch/idsia/scenarios/test/GeneticAlgorithmRun.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.82217574">
-              <caret line="98" column="21" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
+            <state vertical-scroll-proportion="-10.034483">
+              <caret line="95" column="38" selection-start-line="95" selection-start-column="38" selection-end-line="95" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -154,20 +154,20 @@
         <entry file="file://$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetworkAIAgent.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="83" column="45" selection-start-line="83" selection-start-column="45" selection-end-line="83" selection-end-column="45" />
+              <caret line="43" column="48" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
               <folding>
-                <element signature="e#2425#2426#0" expanded="true" />
-                <element signature="e#2477#2478#0" expanded="true" />
+                <element signature="e#2581#2582#0" expanded="true" />
+                <element signature="e#2633#2634#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NeuralNetwork.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NeuralNetwork.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetwork.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="211" column="44" selection-start-line="211" selection-start-column="44" selection-end-line="211" selection-end-column="44" />
+            <state vertical-scroll-proportion="1.8574712">
+              <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -241,9 +241,9 @@
         <option value="$PROJECT_DIR$/src/ch/idsia/mario/engine/LevelScene.java" />
         <option value="$PROJECT_DIR$/src/ch/idsia/mario/engine/GlobalOptions.java" />
         <option value="$PROJECT_DIR$/src/ch/idsia/tools/EvaluationOptions.java" />
-        <option value="$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetworkAIAgent.java" />
         <option value="$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetwork.java" />
         <option value="$PROJECT_DIR$/src/ch/idsia/scenarios/test/GeneticAlgorithmRun.java" />
+        <option value="$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetworkAIAgent.java" />
       </list>
     </option>
   </component>
@@ -1257,7 +1257,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32356256" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30156657" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30156657" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18875" sideWeight="0.66854566" order="0" side_tool="false" content_ui="tabs" />
@@ -1265,7 +1265,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39556137" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39556137" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1330,13 +1330,19 @@
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ch/idsia/scenarios/test/GeneticAlgorithmRun.java</url>
-          <line>89</line>
+          <url>file://$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetwork.java</url>
+          <line>52</line>
           <properties />
-          <option name="timeStamp" value="47" />
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetwork.java</url>
+          <line>69</line>
+          <properties />
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="48" />
+      <option name="time" value="50" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1717,14 +1723,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/idsia/tools/CmdLineOptions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="7" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ch/idsia/mario/engine/LevelScene.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1806,10 +1804,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetwork.java">
+    <entry file="file://$PROJECT_DIR$/src/ch/idsia/tools/CmdLineOptions.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="211" column="44" selection-start-line="211" selection-start-column="44" selection-end-line="211" selection-end-column="44" />
+          <caret line="12" column="7" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -1817,18 +1815,26 @@
     <entry file="file://$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetworkAIAgent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="83" column="45" selection-start-line="83" selection-start-column="45" selection-end-line="83" selection-end-column="45" />
+          <caret line="43" column="48" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
           <folding>
-            <element signature="e#2425#2426#0" expanded="true" />
-            <element signature="e#2477#2478#0" expanded="true" />
+            <element signature="e#2581#2582#0" expanded="true" />
+            <element signature="e#2633#2634#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ch/idsia/scenarios/test/GeneticAlgorithmRun.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82217574">
-          <caret line="98" column="21" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
+        <state vertical-scroll-proportion="-10.034483">
+          <caret line="95" column="38" selection-start-line="95" selection-start-column="38" selection-end-line="95" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetwork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.8574712">
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
           <folding />
         </state>
       </provider>

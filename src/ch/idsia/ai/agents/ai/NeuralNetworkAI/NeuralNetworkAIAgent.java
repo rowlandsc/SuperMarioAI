@@ -3,6 +3,7 @@ package ch.idsia.ai.agents.ai.NeuralNetworkAI;
 import ch.idsia.ai.agents.Agent;
 import ch.idsia.mario.environments.Environment;
 
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -35,6 +36,12 @@ public class NeuralNetworkAIAgent implements Agent
         neuralNetwork = new NeuralNetwork(484, hiddenLayers, 5);
 
         System.out.println("Made neural network");
+    }
+
+    public NeuralNetworkAIAgent(File file) {
+        setName(file.getName());
+
+        neuralNetwork = new NeuralNetwork(file);
     }
 
 

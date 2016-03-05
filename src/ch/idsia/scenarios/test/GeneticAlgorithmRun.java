@@ -92,7 +92,7 @@ public class GeneticAlgorithmRun
                 break;
             }
             System.out.println("Loading " + input.getName());
-            NeuralNetworkAIAgent jawn = new NeuralNetworkAIAgent(input.getName());
+            NeuralNetworkAIAgent jawn = new NeuralNetworkAIAgent(input);
             population[loaded] = jawn;
             AgentsPool.addAgent(jawn);
             generatedAgents++;
