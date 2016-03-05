@@ -88,10 +88,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GeneticAlgorithmRun.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GeneticAlgorithmRun.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ch/idsia/scenarios/test/GeneticAlgorithmRun.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6520211">
+            <state vertical-scroll-proportion="0.0">
               <caret line="150" column="58" selection-start-line="150" selection-start-column="58" selection-end-line="150" selection-end-column="58" />
               <folding />
             </state>
@@ -123,11 +123,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NeuralNetwork.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NeuralNetwork.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetwork.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="124" column="11" selection-start-line="124" selection-start-column="11" selection-end-line="124" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.8644628">
+              <caret line="232" column="0" selection-start-line="232" selection-start-column="0" selection-end-line="232" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -138,7 +138,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="12" column="7" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="7" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,7 +150,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="23" column="30" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="30" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1044#1045#0" expanded="false" />
+                <element signature="e#1079#1080#0" expanded="false" />
+                <element signature="e#1135#1136#0" expanded="false" />
+                <element signature="e#1172#1173#0" expanded="false" />
+                <element signature="e#1241#1242#0" expanded="false" />
+                <element signature="e#1272#1273#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -158,7 +168,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="32" column="74" selection-start-line="32" selection-start-column="74" selection-end-line="32" selection-end-column="74" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#2961#2962#0" expanded="false" />
+                <element signature="e#3024#3025#0" expanded="false" />
+                <element signature="e#3061#3062#0" expanded="false" />
+                <element signature="e#3115#3116#0" expanded="false" />
+                <element signature="e#3153#3154#0" expanded="false" />
+                <element signature="e#3208#3209#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -201,9 +219,9 @@
         <option value="$PROJECT_DIR$/src/ch/idsia/mario/engine/LevelScene.java" />
         <option value="$PROJECT_DIR$/src/ch/idsia/mario/engine/GlobalOptions.java" />
         <option value="$PROJECT_DIR$/src/ch/idsia/tools/EvaluationOptions.java" />
-        <option value="$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetwork.java" />
         <option value="$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetworkAIAgent.java" />
         <option value="$PROJECT_DIR$/src/ch/idsia/scenarios/test/GeneticAlgorithmRun.java" />
+        <option value="$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetwork.java" />
       </list>
     </option>
   </component>
@@ -521,7 +539,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="ProjectPane" />
+      <pane id="Scratches" />
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -832,8 +851,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1217,7 +1235,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32356256" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30273223" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30273223" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1890625" sideWeight="0.66854566" order="0" side_tool="false" content_ui="tabs" />
@@ -1583,14 +1601,14 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding>
-            <element signature="e#357#358#0" expanded="true" />
-            <element signature="e#414#415#0" expanded="true" />
-            <element signature="e#1138#1139#0" expanded="true" />
-            <element signature="e#1183#1184#0" expanded="true" />
-            <element signature="e#1237#1238#0" expanded="true" />
-            <element signature="e#1293#1294#0" expanded="true" />
-            <element signature="e#1725#1726#0" expanded="true" />
-            <element signature="e#1761#1762#0" expanded="true" />
+            <element signature="e#357#358#0" expanded="false" />
+            <element signature="e#414#415#0" expanded="false" />
+            <element signature="e#1138#1139#0" expanded="false" />
+            <element signature="e#1183#1184#0" expanded="false" />
+            <element signature="e#1237#1238#0" expanded="false" />
+            <element signature="e#1293#1294#0" expanded="false" />
+            <element signature="e#1725#1726#0" expanded="false" />
+            <element signature="e#1761#1762#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1608,18 +1626,18 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="56" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="56" />
           <folding>
-            <element signature="e#382#383#0" expanded="true" />
-            <element signature="e#416#417#0" expanded="true" />
-            <element signature="e#443#444#0" expanded="true" />
-            <element signature="e#473#474#0" expanded="true" />
-            <element signature="e#785#786#0" expanded="true" />
-            <element signature="e#824#825#0" expanded="true" />
-            <element signature="e#855#856#0" expanded="true" />
-            <element signature="e#894#895#0" expanded="true" />
-            <element signature="e#934#935#0" expanded="true" />
-            <element signature="e#970#971#0" expanded="true" />
-            <element signature="e#1071#1072#0" expanded="true" />
-            <element signature="e#1095#1096#0" expanded="true" />
+            <element signature="e#382#383#0" expanded="false" />
+            <element signature="e#416#417#0" expanded="false" />
+            <element signature="e#443#444#0" expanded="false" />
+            <element signature="e#473#474#0" expanded="false" />
+            <element signature="e#785#786#0" expanded="false" />
+            <element signature="e#824#825#0" expanded="false" />
+            <element signature="e#855#856#0" expanded="false" />
+            <element signature="e#894#895#0" expanded="false" />
+            <element signature="e#934#935#0" expanded="false" />
+            <element signature="e#970#971#0" expanded="false" />
+            <element signature="e#1071#1072#0" expanded="false" />
+            <element signature="e#1095#1096#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1675,7 +1693,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="7" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="7" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1701,7 +1721,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="30" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="30" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1044#1045#0" expanded="false" />
+            <element signature="e#1079#1080#0" expanded="false" />
+            <element signature="e#1135#1136#0" expanded="false" />
+            <element signature="e#1172#1173#0" expanded="false" />
+            <element signature="e#1241#1242#0" expanded="false" />
+            <element signature="e#1272#1273#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1709,7 +1737,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="74" selection-start-line="32" selection-start-column="74" selection-end-line="32" selection-end-column="74" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2961#2962#0" expanded="false" />
+            <element signature="e#3024#3025#0" expanded="false" />
+            <element signature="e#3061#3062#0" expanded="false" />
+            <element signature="e#3115#3116#0" expanded="false" />
+            <element signature="e#3153#3154#0" expanded="false" />
+            <element signature="e#3208#3209#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1717,14 +1753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="652" column="0" selection-start-line="652" selection-start-column="0" selection-end-line="652" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetwork.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="124" column="11" selection-start-line="124" selection-start-column="11" selection-end-line="124" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -1744,8 +1772,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ch/idsia/scenarios/test/GeneticAlgorithmRun.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6520211">
+        <state vertical-scroll-proportion="0.0">
           <caret line="150" column="58" selection-start-line="150" selection-start-column="58" selection-end-line="150" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/idsia/ai/agents/ai/NeuralNetworkAI/NeuralNetwork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8644628">
+          <caret line="232" column="0" selection-start-line="232" selection-start-column="0" selection-end-line="232" selection-end-column="0" />
           <folding />
         </state>
       </provider>

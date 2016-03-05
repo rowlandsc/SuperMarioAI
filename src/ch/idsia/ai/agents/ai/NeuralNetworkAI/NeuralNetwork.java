@@ -206,15 +206,21 @@ public class NeuralNetwork {
 
         // Mutate
         if(MutationChance <= this.MutationRate){
-            int swap1 = random.nextInt(Parent1.Weights.size());
-            int swap2 = random.nextInt(Parent1.Weights.get(swap1).size());
 
-            int swap3 = random.nextInt(Parent1.Weights.size());
-            int swap4 = random.nextInt(Parent1.Weights.get(swap3).size());
+            float keepMutatingChance = random.nextFloat();
 
-            int temp = childWeights.get(swap1).get(swap2);
-            childWeights.get(swap1).set(swap2, childWeights.get(swap3).get(swap4));
-            childWeights.get(swap3).set(swap4, temp);
+            while(keepMutatingChance < .99f) {
+                int swap1 = random.nextInt(Parent1.Weights.size());
+                int swap2 = random.nextInt(Parent1.Weights.get(swap1).size());
+
+                int swap3 = random.nextInt(Parent1.Weights.size());
+                int swap4 = random.nextInt(Parent1.Weights.get(swap3).size());
+
+                int temp = childWeights.get(swap1).get(swap2);
+                childWeights.get(swap1).set(swap2, childWeights.get(swap3).get(swap4));
+                childWeights.get(swap3).set(swap4, temp);
+                keepMutatingChance = random.nextFloat();
+            }
         }
 
         // Create Child
