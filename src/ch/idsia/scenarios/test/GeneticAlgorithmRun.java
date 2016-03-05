@@ -12,9 +12,8 @@ import ch.idsia.tools.Evaluator;
 import ch.idsia.utils.StatisticalSummary;
 import com.sun.org.apache.xpath.internal.SourceTree;
 
-import java.util.Calendar;
-import java.util.List;
-import java.util.Random;
+import java.io.File;
+import java.util.*;
 
 //import ch.idsia.ai.agents.icegic.robin.AStarAgent;
 //import ch.idsia.ai.agents.icegic.peterlawford.SlowAgent;
@@ -43,13 +42,18 @@ public class GeneticAlgorithmRun
     private static int timeLeftSum = 0;
     private static int marioModeSum = 0;
     private static int currentGeneration = 1;
+    private static int generatedAgents = 0;
+    private static String name = "Gangsta";
 
     public static void main(String[] args) {
         CmdLineOptions cmdLineOptions = new CmdLineOptions(args);
         EvaluationOptions evaluationOptions = cmdLineOptions;  // if none options mentioned, all defalults are used.
         totalFitness =0;
-        createAgentsPool();
 
+        System.out.println("Enter name to use: ");
+        Scanner s = new Scanner(System.in);
+        name = s.nextLine();
+        createAgentsPool();
 
         if (scoring) {
             while (true) {
@@ -72,10 +76,34 @@ public class GeneticAlgorithmRun
     public static void createAgentsPool()
     {
         population = new Agent[generationSize];
-        for (int i=0; i<generationSize; i++) {
-            NeuralNetworkAIAgent jawn = new NeuralNetworkAIAgent("Bryan" + i);
+        int gen = 1;
+        while (true) {
+            File input = new File(name + gen + "-" + 0 + ".txt");
+            if (!input.exists()) {
+                break;
+            }
+            gen++;
+        }
+        gen--;
+        int loaded = 0;
+        while (true) {
+            File input = new File(name + gen + "-" + loaded + ".txt");
+            if (!input.exists()) {
+                break;
+            }
+            System.out.println("Loading " + input.getName());
+            NeuralNetworkAIAgent jawn = new NeuralNetworkAIAgent(input.getName());
+            population[loaded] = jawn;
+            AgentsPool.addAgent(jawn);
+            generatedAgents++;
+            loaded++;
+        }
+
+        for (int i=loaded; i<generationSize; i++) {
+            NeuralNetworkAIAgent jawn = new NeuralNetworkAIAgent(name + generatedAgents);
             population[i] = jawn;
             AgentsPool.addAgent(jawn);
+            generatedAgents++;
         }
     }
 
@@ -148,7 +176,7 @@ public class GeneticAlgorithmRun
 
         for (int j=0; j<generationSize * 0.1f; j++) {
             NeuralNetworkAIAgent nnagent = (NeuralNetworkAIAgent) population[j];
-            nnagent.Save("mofo" + currentGeneration + "-" + j + ".txt");
+            nnagent.Save(name + currentGeneration + "-" + j + ".txt");
         }
 
         //scoreAllAgents(cmdLineOptions);
@@ -238,7 +266,8 @@ public class GeneticAlgorithmRun
             System.out.println("NO PARENT SELECTED");
         }
 
-        NeuralNetworkAIAgent child = new NeuralNetworkAIAgent("Child Of " + selectedParents[0].getName() + " + " + selectedParents[1].getName());
+        NeuralNetworkAIAgent child = new NeuralNetworkAIAgent(name + generatedAgents);
+        generatedAgents++;
         child.setNeuralNetwork(((NeuralNetworkAIAgent) selectedParents[0]).getNeuralNetwork().Crossover(((NeuralNetworkAIAgent)selectedParents[1]).getNeuralNetwork()));
         return child;
     }

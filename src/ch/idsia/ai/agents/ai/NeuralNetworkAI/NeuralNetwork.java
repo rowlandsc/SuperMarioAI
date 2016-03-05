@@ -209,7 +209,7 @@ public class NeuralNetwork {
 
             float keepMutatingChance = random.nextFloat();
 
-            while(keepMutatingChance < .99f) {
+            while(keepMutatingChance < .9999f) {
                 int swap1 = random.nextInt(Parent1.Weights.size());
                 int swap2 = random.nextInt(Parent1.Weights.get(swap1).size());
 
