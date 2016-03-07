@@ -68,7 +68,7 @@ public class GeneticAlgorithmRun
     public static void main(String[] args) {
         CmdLineOptions cmdLineOptions = new CmdLineOptions(args);
         EvaluationOptions evaluationOptions = cmdLineOptions;  // if none options mentioned, all defalults are used.
-        evaluationOptions.setLevelDifficulty(3);
+        evaluationOptions.setLevelDifficulty(10);
         totalFitness =0;
 
         System.out.println("Enter name to use: ");
@@ -143,24 +143,22 @@ public class GeneticAlgorithmRun
 
             System.out.println("I am here.");
 
-            score((NeuralNetworkAIAgent) agent, 3143, cmdLineOptions);
-            if (parent1 < agent.getCompScore())
+            if(((NeuralNetworkAIAgent)agent).dirtyBit == 0)
             {
-                p2 = p1;
-                p1 = (NeuralNetworkAIAgent) agent;
-                parent2 = parent1;
-                parent1 = agent.getCompScore();
-            }
-            else if(parent2 < agent.getCompScore())
-            {
-                p2 = (NeuralNetworkAIAgent) agent;
-                parent2 = agent.getCompScore();
-            }
-            if (worstChild > agent.getCompScore())
-            {
-                worstChild = agent.getCompScore();
-                wChild = (NeuralNetworkAIAgent) agent;
-            }/*
+                score((NeuralNetworkAIAgent) agent, 3143, cmdLineOptions);
+                if (parent1 < agent.getCompScore()) {
+                    p2 = p1;
+                    p1 = (NeuralNetworkAIAgent) agent;
+                    parent2 = parent1;
+                    parent1 = agent.getCompScore();
+                } else if (parent2 < agent.getCompScore()) {
+                    p2 = (NeuralNetworkAIAgent) agent;
+                    parent2 = agent.getCompScore();
+                }
+                if (worstChild > agent.getCompScore()) {
+                    worstChild = agent.getCompScore();
+                    wChild = (NeuralNetworkAIAgent) agent;
+                }/*
             if (i%5 ==0)
             {
                 //crossing over best parents
@@ -171,11 +169,12 @@ public class GeneticAlgorithmRun
                 AgentsPool.addAgent(wChild);
             } */
 
-            System.out.println(agent.getCompScore() + " Score");
-            System.out.println(parent1 + " Parent 1");
-            System.out.println(parent2 + " Parent 2");
-            System.out.println(worstChild + " Worst Child");
-            i++;
+                System.out.println(agent.getCompScore() + " Score");
+                System.out.println(parent1 + " Parent 1");
+                System.out.println(parent2 + " Parent 2");
+                System.out.println(worstChild + " Worst Child");
+                i++;
+            }
         }
 
         System.out.println(p1.getName() + " Parent 1");
@@ -328,7 +327,8 @@ public class GeneticAlgorithmRun
 
 
         //Set comp score on agent
-        agent.setCompScore(competitionScore);
+        agent.setCompScore((competitionScore + killsSum + marioStatusSum + marioModeSum + timeLeftSum));
+        ((NeuralNetworkAIAgent)agent).dirtyBit = 1;
 
         System.out.println("Competition score: " + competitionScore);
         System.out.println("Total kills Sum = " + killsSum);

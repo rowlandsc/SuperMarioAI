@@ -23,6 +23,7 @@ public class NeuralNetworkAIAgent implements Agent
 
     protected double compScore = 0;
     public double accumulatedFitness = 0;
+    public int dirtyBit = 0;
 
 
 
