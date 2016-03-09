@@ -30,7 +30,7 @@ public class EvaluationOptions extends SimulationOptions
 //                System.err.println("It is good day to kill yourself with the yellow wall");
             }
         GlobalOptions.VisualizationOn = isVisualization();
-        GlobalOptions.FPS = (isMaxFPS()) ? GlobalOptions.InfiniteFPS : 150 /*GlobalOptions.FPS*/;
+        GlobalOptions.FPS = 32;
         GlobalOptions.pauseWorld = isPauseWorld();
         GlobalOptions.PowerRestoration = isPowerRestoration();
         GlobalOptions.StopSimulationIfWin = isStopSimulationIfWin();

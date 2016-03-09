@@ -307,6 +307,7 @@ public class GeneticAlgorithmRun
         EvaluationOptions options = cmdLineOptions;
 
         options.setNumberOfTrials(numberOfTrials); // numberof trials here or 1?
+
 //        options.setVisualization(false);
 //        options.setMaxFPS(true);
         System.out.println("\nScoring controller " + agent.getName() + " with starting seed " + startingSeed);
@@ -320,7 +321,7 @@ public class GeneticAlgorithmRun
         boolean again = true;
         int i = 0;
         while (again && i < 100) {
-            DoubleBoolPair res = testConfig (controller, options, startingSeed + i, i % 10, false);
+            DoubleBoolPair res = testConfig (controller, options, (int) (Math.random () * Integer.MAX_VALUE), i % 10, false);
             competitionScore += res.d;
             again = res.b;
             i++;
@@ -389,6 +390,10 @@ public class GeneticAlgorithmRun
 //            System.out.println("result.marioStatus = " + result.marioStatus);
 //            System.out.println("result.computeKillsTotal() = " + result.computeKillsTotal());
             ss.add (result.computeDistancePassed());
+
+            double x = result.computeDistancePassed();
+            double y = result.computeBasicFitness();
+            double z = result.livesLeft;
 
             if (result.livesLeft > 0 && result.timeLeft > 0) won = true;
         }

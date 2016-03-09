@@ -223,16 +223,23 @@ public class NeuralNetwork {
             float keepMutatingChance = random.nextFloat();
 
             while(keepMutatingChance < .99999f) {
-                int swap1 = random.nextInt(Parent1.Weights.size());
-                int swap2 = random.nextInt(Parent1.Weights.get(swap1).size());
+                if (random.nextInt(100) < 50) {
+                    int swap1 = random.nextInt(Parent1.Weights.size());
+                    int swap2 = random.nextInt(Parent1.Weights.get(swap1).size());
 
-                int swap3 = random.nextInt(Parent1.Weights.size());
-                int swap4 = random.nextInt(Parent1.Weights.get(swap3).size());
+                    int swap3 = random.nextInt(Parent1.Weights.size());
+                    int swap4 = random.nextInt(Parent1.Weights.get(swap3).size());
 
-                int temp = childWeights.get(swap1).get(swap2);
-                childWeights.get(swap1).set(swap2, childWeights.get(swap3).get(swap4));
-                childWeights.get(swap3).set(swap4, temp);
-                keepMutatingChance = random.nextFloat();
+                    int temp = childWeights.get(swap1).get(swap2);
+                    childWeights.get(swap1).set(swap2, childWeights.get(swap3).get(swap4));
+                    childWeights.get(swap3).set(swap4, temp);
+                    keepMutatingChance = random.nextFloat();
+                }
+                else {
+                    int mutate1 = random.nextInt(childWeights.size());
+                    int mutate2 = random.nextInt(childWeights.get(mutate1).size());
+                    childWeights.get(mutate1).set(mutate2, (int) (childWeights.get(mutate1).get(mutate2) * ((random.nextFloat() * 4f) - 2f)));
+                }
             }
         }
 
