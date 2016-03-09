@@ -13,7 +13,8 @@ public class Mario extends Sprite
     public static boolean large = false;
     public static boolean fire = false;
     public static int coins = 0;
-    public static int lives = 1024;
+    public static int livesStart = 1;
+    public static int lives = 1;
 //    public static int numberOfAttempts = 0;
 //    public static String levelString = "none";
     private int status = STATUS_RUNNING;
